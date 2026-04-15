@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model ContractorApplication {
+  id              String    @id @default(cuid())
+  createdAt       DateTime  @default(now())
+  firstName       String
+  lastName        String
+  email           String
+  phone           String
+  company         String
+  licenseNumber   String?
+  yearsExperience String
+  serviceArea     String
+  projectTypes    String // stored as comma-separated values for SQLite
+  status          String    @default("PENDING") // PENDING, APPROVED, REJECTED
+  reviewedAt      DateTime?
+  notes           String?
+
+  user User?
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String
+  createdAt    DateTime @default(now())
+
+  applicationId String?                @unique
+  application   ContractorApplication? @relation(fields: [applicationId], references: [id])
+
+  sessions Session[]
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
