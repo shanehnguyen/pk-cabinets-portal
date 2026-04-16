@@ -14,7 +14,7 @@ export default function WhoItFor() {
           Whether you're a licensed installer, remodeling contractor, interior designer, or builder—we've built this program for professionals who deliver exceptional kitchens.
         </p>
 
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {audiences.map((item, idx) => (
             <div key={idx}>
               <div className="img-placeholder rounded-full w-20 h-20 mx-auto mb-4"></div>

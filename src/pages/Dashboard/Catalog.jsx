@@ -116,8 +116,8 @@ export default function Catalog() {
       </div>
 
       <div className="flex gap-6">
-        {/* Left Sidebar Filters */}
-        <div className="w-[220px] shrink-0">
+        {/* Left Sidebar Filters — hidden on mobile */}
+        <div className="hidden md:block w-[220px] shrink-0">
           <div className="sticky top-6 bg-white rounded-sm border border-placeholder p-5">
             <h3 className="font-body font-bold text-sm mb-5 pb-3 border-b border-placeholder">Filters</h3>
             <FilterSection title="Cabinet Line" items={LINES} selected={lineFilters} onToggle={(v) => toggleFilter(lineFilters, setLineFilters, v)} />
@@ -171,7 +171,7 @@ export default function Catalog() {
               <button onClick={clearFilters} className="text-xs font-semibold text-gold hover:underline uppercase tracking-widest">Clear Filters</button>
             </div>
           ) : gridView ? (
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {filtered.map(p => (
                 <div key={p.id} className="bg-white rounded-sm border border-placeholder hover:border-gold hover:shadow-lg transition-all group overflow-hidden relative">
                   {/* Image */}

@@ -11,7 +11,7 @@ export default function WhyClients() {
   return (
     <section className="py-24">
       <div className="max-w-6xl mx-auto px-8">
-        <div className="grid grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
             <h2 className="mb-8">Why your clients will love PK Cabinets</h2>
 

@@ -232,7 +232,7 @@ export default function Projects() {
           </div>
 
           {/* Details Grid */}
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <div className="bg-white rounded-sm p-5">
               <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">Cabinet Count</p>
               <p className="text-2xl font-semibold text-text">{project.cabinetCount} <span className="text-sm font-normal text-muted">{pluralize(project.cabinetCount)}</span></p>
@@ -279,7 +279,7 @@ export default function Projects() {
                   </button>
                 )}
               </div>
-              <div className="grid grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
                 <div className="bg-white rounded-sm p-5">
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">Estimated Budget</p>
                   <p className="text-2xl font-semibold text-text">{project.estimate}</p>
@@ -334,7 +334,7 @@ export default function Projects() {
         {/* Photos Section */}
         <div className="bg-white rounded-sm border border-placeholder p-8">
           <h2 className="font-heading text-2xl font-normal mb-6">Photos</h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* 2 mock placeholder tiles */}
             <div className="aspect-square bg-placeholder rounded-sm flex items-center justify-center">
               <Camera size={32} className="text-muted" />
@@ -476,7 +476,7 @@ export default function Projects() {
           {!search && <button onClick={() => setShowModal(true)} className="btn-primary flex items-center gap-2 mx-auto"><Plus size={18} /> New Project</button>}
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {sorted.map(project => {
             const colors = getStatusColor(project.status)
             const urgency = getUrgency(project.installationDate, project.status)
@@ -533,7 +533,7 @@ export default function Projects() {
                 </div>
 
                 {/* Details Grid */}
-                <div className="grid grid-cols-2 gap-3 mb-3 pb-3 border-b border-placeholder">
+                <div className="grid grid-cols-2 gap-3 mb-3 pb-3 border-b border-placeholder text-sm">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-1">Cabinet Count</p>
                     <p className="text-text font-semibold">{project.cabinetCount} {pluralize(project.cabinetCount)}</p>
@@ -601,7 +601,7 @@ export default function Projects() {
                 <input type="text" value={newProject.clientName} onChange={(e) => setNewProject({ ...newProject, clientName: e.target.value })}
                   className="w-full px-4 py-2 border-2 border-gray-300 rounded-sm focus:outline-none focus:border-gold transition-colors" placeholder="Client or company name" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-widest text-muted mb-2">Cabinet Count</label>
                   <input type="number" value={newProject.cabinetCount} onChange={(e) => setNewProject({ ...newProject, cabinetCount: e.target.value })}
@@ -666,7 +666,7 @@ function EditModal({ editingProject, setEditingProject, onSave, onDelete }) {
             <input type="text" value={editingProject.clientName} onChange={(e) => setEditingProject({ ...editingProject, clientName: e.target.value })}
               className="w-full px-4 py-2 border-2 border-gray-300 rounded-sm focus:outline-none focus:border-gold transition-colors" />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-semibold uppercase tracking-widest text-muted mb-2">Cabinet Count</label>
               <input type="number" value={editingProject.cabinetCount} onChange={(e) => setEditingProject({ ...editingProject, cabinetCount: e.target.value })}

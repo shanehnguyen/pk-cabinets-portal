@@ -24,7 +24,7 @@ export default function Login() {
 
       {/* Content — vertically centered */}
       <div className="flex-1 flex items-center justify-center py-16">
-        <div className="w-full mx-auto px-8" style={{ maxWidth: '480px' }}>
+        <div className="w-full mx-auto px-4 md:px-8" style={{ maxWidth: '480px' }}>
           <form className="bg-white rounded-sm p-12 shadow-md border border-placeholder" onSubmit={handleSubmit}>
             {/* Logo */}
             <div className="text-center mb-8">

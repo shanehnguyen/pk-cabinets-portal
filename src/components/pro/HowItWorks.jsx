@@ -12,7 +12,7 @@ export default function HowItWorks() {
       <div className="max-w-6xl mx-auto px-8">
         <h2 className="mb-12">How it works</h2>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Step 1 - tall left card */}
           <div className="row-span-4 relative overflow-hidden rounded-sm group">
             <div className="img-placeholder min-h-96 lg:min-h-full"></div>

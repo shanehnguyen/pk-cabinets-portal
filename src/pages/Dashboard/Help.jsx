@@ -100,7 +100,7 @@ export default function Help() {
       {/* Quick Actions — 4 cards */}
       <div>
         <h2 className="font-heading text-2xl font-normal mb-6">Quick Actions</h2>
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           <button onClick={() => setShowContactModal(true)}
             className="bg-white rounded-sm p-6 border border-placeholder hover:border-gold hover:shadow-md transition-all text-left relative group">
             <div className="w-10 h-10 bg-gold/10 rounded-sm flex items-center justify-center mb-4">

@@ -18,7 +18,7 @@ export default function Apply() {
 
       {/* Content */}
       <div className="py-20">
-        <div className="max-w-5xl mx-auto px-8 flex gap-12">
+        <div className="max-w-5xl mx-auto px-4 md:px-8 flex gap-12">
           {/* Form — left */}
           <div className="flex-1 max-w-2xl">
             <div className="mb-16">

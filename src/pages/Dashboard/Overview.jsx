@@ -151,7 +151,7 @@ export default function Overview() {
       )}
 
       {/* Stat Cards — 4 columns */}
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         <div className="bg-white rounded-sm p-6 border border-placeholder">
           <div className="text-2xl text-gold mb-4"><Package size={32} /></div>
           <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">Total Orders</p>
@@ -179,7 +179,7 @@ export default function Overview() {
       </div>
 
       {/* Row: Rep + Recent Orders */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div>
           <h2 className="font-heading text-2xl font-normal mb-6">Your Dedicated Rep</h2>
           <div className="bg-white rounded-sm p-8 border border-placeholder">
@@ -232,7 +232,7 @@ export default function Overview() {
       </div>
 
       {/* Row: Todo List + Deliveries This Week */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {/* Todo List */}
         <div className="bg-white rounded-sm border border-placeholder p-6">
           <h2 className="font-heading text-2xl font-normal mb-4">To-Do</h2>
@@ -289,7 +289,7 @@ export default function Overview() {
       </div>
 
       {/* Row: Active Projects + Quick Actions */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {/* Active Projects */}
         <div className="bg-white rounded-sm border border-placeholder p-6">
           <h2 className="font-heading text-2xl font-normal mb-4">Active Projects</h2>
@@ -308,7 +308,7 @@ export default function Overview() {
         {/* Quick Actions */}
         <div className="bg-white rounded-sm border border-placeholder p-6">
           <h2 className="font-heading text-2xl font-normal mb-4">Quick Actions</h2>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <button onClick={() => setToast('Reordering last purchase...')}
               className="flex items-center gap-3 p-4 border border-placeholder rounded-sm hover:border-gold hover:shadow-sm transition-all text-left">
               <Repeat2 size={20} className="text-gold shrink-0" />
@@ -348,7 +348,7 @@ export default function Overview() {
           </ResponsiveContainer>
 
           {/* Financial Snapshot */}
-          <div className="mt-6 pt-6 border-t border-placeholder grid grid-cols-2 gap-6">
+          <div className="mt-6 pt-6 border-t border-placeholder grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">YTD Spent</p>
               <div className="flex items-baseline gap-3">

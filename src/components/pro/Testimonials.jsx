@@ -22,7 +22,7 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto px-8">
         <h2 className="text-center mb-12">What contractors are saying</h2>
 
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((item, idx) => (
             <div key={idx} className="bg-background rounded-lg p-8">
               <div className="text-gold text-lg font-semibold tracking-widest mb-4">★★★★★</div>

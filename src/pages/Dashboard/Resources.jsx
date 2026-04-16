@@ -102,7 +102,7 @@ export default function Resources() {
             <p className="text-muted">No resources found matching your search or filter.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {filteredResources.map((resource, idx) => {
               const Icon = resource.icon
               return (
@@ -130,7 +130,7 @@ export default function Resources() {
       {(selectedCategory === 'All' || selectedCategory === 'Videos') && (
         <div className={selectedCategory === 'All' ? 'mt-8 pt-8 border-t border-placeholder' : ''}>
           <h2 className="font-heading text-3xl font-normal mb-8">Video Library</h2>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {videos.map((video, idx) => (
               <div key={idx} className="bg-white rounded-sm overflow-hidden border border-placeholder hover:border-gold hover:shadow-md transition-all group">
                 {/* Video Thumbnail */}

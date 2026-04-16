@@ -151,7 +151,7 @@ export default function Account() {
       {/* 1. Trade Account Status — read-only */}
       <div className={CARD}>
         <CardHeader title="Trade Account Status" noEdit />
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">Trade Tier</p>
             <div className="flex items-center gap-2"><span className="inline-block w-3 h-3 bg-gold rounded-full"></span><span className="font-semibold text-text">Deluxe Pro</span></div>
@@ -181,7 +181,7 @@ export default function Account() {
               <input type="text" value={bizDraft.businessName} onChange={(e) => setBizDraft({ ...bizDraft, businessName: e.target.value })}
                 className="w-full px-4 py-3 border-2 border-gray-300 rounded-sm bg-white focus:outline-none focus:border-gold transition-colors" />
             </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-widest text-muted mb-2">Business Type</label>
                 <select value={bizDraft.businessType} onChange={(e) => setBizDraft({ ...bizDraft, businessType: e.target.value })}
@@ -199,7 +199,7 @@ export default function Account() {
         ) : (
           <div className="space-y-5">
             <ReadField label="Business Name" value={bizData.businessName} />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <ReadField label="Business Type" value={bizData.businessType} />
               <ReadField label="License Number" value={bizData.licenseNumber} />
             </div>
@@ -217,7 +217,7 @@ export default function Account() {
               <input type="text" value={contactDraft.contactName} onChange={(e) => setContactDraft({ ...contactDraft, contactName: e.target.value })}
                 className="w-full px-4 py-3 border-2 border-gray-300 rounded-sm bg-white focus:outline-none focus:border-gold transition-colors" />
             </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-widest text-muted mb-2">Email Address</label>
                 <input type="email" value={contactDraft.email} onChange={(e) => setContactDraft({ ...contactDraft, email: e.target.value })}
@@ -233,7 +233,7 @@ export default function Account() {
         ) : (
           <div className="space-y-5">
             <ReadField label="Contact Name" value={contactData.contactName} />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <ReadField label="Email Address" value={contactData.email} />
               <ReadField label="Phone Number" value={contactData.phone} />
             </div>
@@ -279,7 +279,7 @@ export default function Account() {
                 <input type="text" value={newAddress.street} onChange={(e) => setNewAddress({ ...newAddress, street: e.target.value })}
                   className="w-full px-4 py-2 border-2 border-gray-300 rounded-sm focus:outline-none focus:border-gold transition-colors text-sm" />
               </div>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-widest text-muted mb-2">City</label>
                   <input type="text" value={newAddress.city} onChange={(e) => setNewAddress({ ...newAddress, city: e.target.value })}

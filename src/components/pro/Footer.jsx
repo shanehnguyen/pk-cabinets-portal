@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1a1a1a]">
       <div className="max-w-6xl mx-auto px-8 py-16">
-        <div className="grid grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Column 1 — Brand */}
           <div>
             <h3 className="font-heading text-2xl font-bold text-white mb-1">PK Cabinet</h3>
@@ -61,7 +61,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#333]">
-        <div className="max-w-6xl mx-auto px-8 py-5 flex justify-between items-center">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-xs text-[#cccccc] uppercase tracking-widest">&copy; 2026 PK Cabinet. All Rights Reserved.</p>
           <div className="flex items-center gap-6">
             <a href="https://www.pkcabinet.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-xs text-[#cccccc] uppercase tracking-widest hover:text-white transition-colors">Privacy Policy</a>

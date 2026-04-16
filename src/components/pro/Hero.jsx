@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Hero() {
   return (
-    <section className="relative h-[80vh] flex items-center bg-placeholder">
+    <section className="relative h-[60vh] md:h-[80vh] flex items-center bg-placeholder">
       {/* Full-screen background placeholder */}
       <div className="absolute inset-0 bg-placeholder"></div>
 

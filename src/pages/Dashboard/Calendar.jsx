@@ -139,7 +139,7 @@ export default function Calendar() {
       </div>
 
       {/* Stats Bar */}
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <div className="bg-white rounded-sm p-5 border border-placeholder">
           <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-1">Deliveries This Month</p>
           <p className="font-heading text-2xl">{deliveriesCount}</p>

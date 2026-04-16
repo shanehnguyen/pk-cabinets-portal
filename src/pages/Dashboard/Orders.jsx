@@ -416,7 +416,7 @@ export default function Orders() {
           </div>
 
           {/* Info Grid */}
-          <div className="grid grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
             <div className="bg-white rounded-sm p-5 border border-placeholder">
               <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">Payment Status</p>
               {order.paymentStatus === 'Paid' ? (
@@ -687,7 +687,7 @@ export default function Orders() {
       )}
 
       {/* Summary Bar */}
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <div className="bg-white rounded-sm p-6 border border-placeholder">
           <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">Total Orders</p>
           <p className="font-heading text-3xl font-normal">{totalOrders}</p>
@@ -721,8 +721,8 @@ export default function Orders() {
 
       {/* Filter Bar */}
       <div className="bg-white rounded-sm p-4 border border-placeholder space-y-4">
-        <div className="flex gap-4 items-end">
-          <div className="flex gap-2 border-b border-placeholder pb-4">
+        <div className="flex flex-col md:flex-row gap-4 md:items-end">
+          <div className="flex gap-2 border-b border-placeholder pb-4 overflow-x-auto">
             {['All', 'Processing', 'Shipped', 'Delivered', 'Invoices'].map(tab => (
               <button key={tab} onClick={() => { setStatusFilter(tab); setSelectedIds(new Set()) }}
                 className={`px-4 py-2 text-xs font-semibold uppercase tracking-widest rounded-sm transition-colors flex items-center gap-1.5 ${
@@ -829,11 +829,32 @@ export default function Orders() {
           </table>
         </div>
       ) : (
-        /* Orders Table */
-        <div className="bg-white rounded-sm border border-placeholder overflow-hidden">
+        /* Orders Table (desktop) + Cards (mobile) */
+        <div>
           {filtered.length === 0 ? (
-            <div className="p-12 text-center"><p className="text-muted">No orders match your filters.</p></div>
+            <div className="bg-white rounded-sm border border-placeholder p-12 text-center"><p className="text-muted">No orders match your filters.</p></div>
           ) : (
+            <>
+            {/* Mobile Cards */}
+            <div className="md:hidden space-y-3">
+              {filtered.map((order) => (
+                <div key={order.id} onClick={() => setDetailOrder(order)}
+                  className="bg-white rounded-sm border border-placeholder p-4 hover:border-gold transition-colors cursor-pointer">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-body font-semibold text-text">{order.id}</span>
+                    <span className={`inline-block px-3 py-1 rounded-sm text-xs font-semibold ${getStatusColor(order.status)}`}>{order.status}</span>
+                  </div>
+                  <p className="text-sm text-text mb-2 truncate">{order.items}</p>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-muted">{order.date}</span>
+                    <span className="font-semibold text-text">{fmt(order.total)}</span>
+                  </div>
+                  {order.project && <p className="text-xs text-gold font-semibold mt-2">{order.project}</p>}
+                </div>
+              ))}
+            </div>
+            {/* Desktop Table */}
+            <div className="hidden md:block bg-white rounded-sm border border-placeholder overflow-hidden">
             <table className="w-full">
               <thead className="bg-white border-b border-placeholder">
                 <tr>
@@ -918,6 +939,8 @@ export default function Orders() {
                 ))}
               </tbody>
             </table>
+            </div>
+            </>
           )}
         </div>
       )}

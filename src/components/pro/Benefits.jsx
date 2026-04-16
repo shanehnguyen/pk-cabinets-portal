@@ -26,7 +26,7 @@ export default function Benefits() {
         </div>
 
         {/* 2x3 Grid */}
-        <div className="grid grid-cols-2 gap-x-12 gap-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 md:gap-y-10">
           {benefits.map(({ icon: Icon, title, desc }, idx) => (
             <div key={idx} className="flex items-start gap-5">
               <div className="shrink-0 w-12 h-12 border border-gold rounded-sm flex items-center justify-center">
