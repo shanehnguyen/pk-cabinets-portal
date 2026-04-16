@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
-import { auth } from "@/lib/auth";
+// import { redirect } from "next/navigation";
+// import { auth } from "@/lib/auth";
 
 const CABINET_LINES = [
   "Mallorca",
@@ -11,17 +11,17 @@ const CABINET_LINES = [
 ];
 
 export default async function DashboardPage() {
-  const session = await auth();
+  // const session = await auth();
 
-  if (!session?.user) {
-    redirect("/login");
-  }
+  // if (!session?.user) {
+  //   redirect("/login");
+  // }
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-2">Contractor Dashboard</h1>
       <p className="text-lg mb-8">
-        Welcome back, {session.user.name || session.user.email}!
+        Welcome back!
       </p>
 
       {/* Trade Pricing */}
