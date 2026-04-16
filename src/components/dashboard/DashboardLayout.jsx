@@ -156,35 +156,6 @@ export default function DashboardLayout({ children }) {
               <HelpCircle size={22} />
             </button>
 
-            {/* Profile */}
-            <div className="relative" ref={profileRef}>
-              <button onClick={() => setShowProfile(!showProfile)}
-                className="w-9 h-9 rounded-full bg-text flex items-center justify-center hover:ring-2 hover:ring-gold transition-all" title={user?.contractorName}>
-                <span className="text-xs font-heading font-bold text-gold">{initials}</span>
-              </button>
-              {showProfile && (
-                <div className="absolute right-0 top-full mt-2 w-56 bg-white border border-placeholder rounded-sm shadow-lg z-50">
-                  <div className="px-4 py-3 border-b border-placeholder">
-                    <p className="text-sm font-semibold text-text">{user?.contractorName}</p>
-                    <p className="text-xs text-muted">{user?.email}</p>
-                  </div>
-                  <div className="px-4 py-2 border-b border-placeholder">
-                    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-gold/10 text-gold text-xs font-semibold rounded-sm">Gold 25%</span>
-                  </div>
-                  <div className="py-1">
-                    <button onClick={() => { setShowProfile(false); navigate('/dashboard/account') }}
-                      className="w-full px-4 py-2.5 text-left text-sm text-text hover:bg-gray-50 transition-colors flex items-center gap-3 min-h-[44px]">
-                      <Settings size={16} className="text-muted" /> Account Settings
-                    </button>
-                    <button onClick={() => { setShowProfile(false); handleLogout() }}
-                      className="w-full px-4 py-2.5 text-left text-sm text-red-600 hover:bg-red-50 transition-colors flex items-center gap-3 min-h-[44px]">
-                      <LogOut size={16} /> Log Out
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-
             {/* Notifications */}
             <div className="relative" ref={notifRef}>
               <button onClick={() => setShowNotifications(!showNotifications)}
@@ -212,6 +183,34 @@ export default function DashboardLayout({ children }) {
                         </div>
                       )
                     })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Profile */}
+            <div className="relative" ref={profileRef}>
+              <button onClick={() => setShowProfile(!showProfile)}
+                className="w-9 h-9 rounded-full bg-gray-300 hover:ring-2 hover:ring-gold transition-all" title={user?.contractorName}>
+              </button>
+              {showProfile && (
+                <div className="absolute right-0 top-full mt-2 w-56 bg-white border border-placeholder rounded-sm shadow-lg z-50">
+                  <div className="px-4 py-3 border-b border-placeholder">
+                    <p className="text-sm font-semibold text-text">{user?.contractorName}</p>
+                    <p className="text-xs text-muted">{user?.email}</p>
+                  </div>
+                  <div className="px-4 py-2 border-b border-placeholder">
+                    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-gold/10 text-gold text-xs font-semibold rounded-sm">Gold 25%</span>
+                  </div>
+                  <div className="py-1">
+                    <button onClick={() => { setShowProfile(false); navigate('/dashboard/account') }}
+                      className="w-full px-4 py-2.5 text-left text-sm text-text hover:bg-gray-50 transition-colors flex items-center gap-3 min-h-[44px]">
+                      <Settings size={16} className="text-muted" /> Account Settings
+                    </button>
+                    <button onClick={() => { setShowProfile(false); handleLogout() }}
+                      className="w-full px-4 py-2.5 text-left text-sm text-red-600 hover:bg-red-50 transition-colors flex items-center gap-3 min-h-[44px]">
+                      <LogOut size={16} /> Log Out
+                    </button>
                   </div>
                 </div>
               )}
